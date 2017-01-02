@@ -1,0 +1,65 @@
+.mj-heading {
+    @include margin-bottom(xlarge);
+
+    @include breakpoint($desktop) {
+        @include margin-bottom(xxlarge);
+    }
+
+    &__title {
+        display: block;
+        @include margin(none auto medium);
+        @include padding(none 15%);
+        position: relative;
+        @include set-type(secondary, tera);
+        letter-spacing: 0.15rem;
+        color: get-color(type, accent);
+        text-align: center;
+
+        &:before,
+        &:after{
+            position: absolute;
+            top: 40%;
+            content: '';
+            display: block;
+            width: 5%;
+            height: 1px;
+            background: get-color(outline);
+        }
+
+        &:before {
+            left: 5%;
+        }
+
+        &:after {
+            right: 5%;
+        }
+
+        &:last-child {
+            @include margin-bottom(none);
+        }
+
+        .mj-heading--invert & {
+            color: get-color(type, invert);
+
+            &:before,
+            &:after{
+                background: get-color(outline, invert);
+            }
+        }
+    }
+
+    &__subtitle {
+        @include padding(none 5%);
+        @include set-type(primary, milli);
+        text-align: center;
+        text-transform: uppercase;
+
+        @include breakpoint($tablet) {
+            @include padding(none 10%);
+        }
+
+        .mj-heading--invert & {
+            color: get-color(type, invert);
+        }
+    }
+}

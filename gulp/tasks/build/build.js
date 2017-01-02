@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 function _build(cb){
     return runSequence(
         ['clean'],
-        ['compile-sass', 'compile-js', 'compile-view'],
+        ['compile-sass', 'compile-js', 'compile-view', 'compile-assets'],
         cb
     );
 }

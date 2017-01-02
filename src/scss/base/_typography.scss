@@ -1,0 +1,150 @@
+/* ==========================================================================
+   TYPOGRAPHY
+
+   Type definitions, mixins and functions for setting typography styles
+   ========================================================================== */
+
+
+/* ------------------------------------------------------------
+ Font family variants
+
+ Note: these private properties should ONLY be used within
+ the typography definition file
+ ------------------------------------------------------------ */
+$_type-primary: 'lato', Arial, monospace;
+$_type-secondary: 'scriblle_script', monospace;
+
+/**
+ Vertical Rhythm properties
+*/
+$base-font-size: 16px;
+$base-line-height: 24px;
+$font-unit: 1rem;
+$relative-font-sizing: false;
+$round-to-nearest-half-line: false;
+
+/* ------------------------------------------------------------
+ Type font family variants
+ ------------------------------------------------------------ */
+$type-variant: (
+    primary: $_type-primary,
+    secondary: $_type-secondary
+);
+
+
+/* ------------------------------------------------------------
+ Type sizes and line-heights scale
+
+ Line-heights are set to a vertical rhythm ratio of 1:1.5 at
+ 16px base and 24px line-height
+ ------------------------------------------------------------ */
+$type-scale: (
+    peta: (
+        size: 40,
+        height: 1.2
+    ),
+    tera: (
+        size: 30,
+        height: 1.6
+    ),
+    giga: (
+        size: 28,
+        height: 1.33
+    ),
+    mega: (
+        size: 26,
+        height: 1.33
+    ),
+    kilo: (
+        size: 18,
+        height: 1
+    ),
+    micro: (
+        size: 16,
+        height: 1.5
+    ),
+    milli: (
+        size: 14,
+        height: 1.72
+    ),
+    mini: (
+        size: 12,
+        height: 2
+    )
+);
+
+/* ------------------------------------------------------------
+ Function for getting $type-variant
+ @param {String} $font-size Name of font size to retrieve
+ ------------------------------------------------------------ */
+@function get-type-variant($font-variant) {
+    @return map-deep-get($type-variant, $font-variant);
+}
+
+/* ------------------------------------------------------------
+ Function for getting font-size from type-scale
+ @param {String} $font-size Name of font size to retrieve
+ ------------------------------------------------------------ */
+@function get-type-size($font-size) {
+    $converted-size: px-to-rem(map-deep-get($type-scale, $font-size, size));
+
+    //get the $type-scale font size and set the vertical rhythm
+    @return $converted-size;
+}
+
+
+/* ------------------------------------------------------------
+ Function for getting line-height from type-scale
+
+ @param {String} $font-size Name of font size to retrieve
+ ------------------------------------------------------------ */
+@function get-type-height($font-size) {
+    @return map-deep-get($type-scale, $font-size, height);
+}
+
+/* ------------------------------------------------------------
+ Mixin for setting the font-variant
+
+ @param {String} $font-variant Name of font variant to set
+ @param {String} $font-weight Name of font weight to set
+ ------------------------------------------------------------ */
+@mixin set-type-variant($font-variant, $font-weight) {
+    font-family: get-type-variant($font-variant, $font-weight);
+}
+
+/* ------------------------------------------------------------
+ Mixin for setting the font-size and line-height from type-scale
+
+ @param {String} $font-size Name of font size to set
+ ------------------------------------------------------------ */
+@mixin set-type-size($font-size) {
+    font-size: get-type-size($font-size);
+    line-height: get-type-height($font-size);
+}
+
+/* ------------------------------------------------------------
+ Mixin for setting the line-height from type-scale
+
+ @param {String} $font-size Name of font size to set
+ ------------------------------------------------------------ */
+@mixin set-type-height($font-size) {
+    line-height: get-type-height($font-size);
+}
+
+/* ------------------------------------------------------------
+ Mixin for setting the font styles for an element
+
+ @param {String} $font-variant Name of font variant (family) from the $type-variant map
+ @param {String} $font-size Font size from the $type-scale
+ @param {String} $font-weight Optional font style weight (accepts: normal || bold)
+ ------------------------------------------------------------ */
+@mixin set-type($font-variant: 'primary', $font-size: 'micro', $font-weight: normal, $type-color: 'default') {
+    //get the font variant property
+    font-family: get-type-variant($font-variant);
+    @include set-type-size($font-size);
+    font-weight: $font-weight;
+
+    @if($type-color != 'none') {
+        color: get-color(type, $type-color);
+    }
+}

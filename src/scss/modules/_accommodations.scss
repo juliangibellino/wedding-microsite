@@ -1,0 +1,19 @@
+.mj-accom {
+    background-image: url("/assets/images/std-splash-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__cta {
+        text-align: center;
+    }
+
+    &__button {
+        display: inline-block;
+        @include padding(xsmall large);
+        @include set-type(primary, kilo, bold, invert);
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 1px solid get-color(button, background);
+
+    }
+}

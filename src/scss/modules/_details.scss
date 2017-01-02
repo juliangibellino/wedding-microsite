@@ -1,0 +1,65 @@
+.mj-details {
+    width: 95%;
+    @include margin(none auto xxlarge);
+
+    @include breakpoint($tablet) {
+        width: 70%;
+    }
+
+    &:last-child {
+        @include margin-bottom(none);
+    }
+
+    &--border {
+        @include padding(xlarge);
+        border: 1px solid get-color(outline);
+    }
+
+    &__item {
+        width: 90%;
+        @include margin(none auto large);
+        text-align: center;
+
+        @include breakpoint($tablet) {
+            width: 70%;
+            @include margin-bottom(xlarge);
+        }
+
+        &:last-child {
+            @include margin-bottom(none);
+        }
+    }
+
+
+    &__title {
+        display: inline-block;
+        @include margin-bottom(medium);
+        @include padding(xsmall small);
+        @include set-type(primary, kilo, bold);
+        font-style: italic;
+        text-transform: uppercase;
+        line-height: 1;
+        color: get-color(type, invert);
+        background: get-color(box, accent);
+    }
+
+    &__detail {
+        @include set-type(primary, micro);
+        text-transform: uppercase;
+
+        .mj-details--invert & {
+            color: get-color(type, invert);
+        }
+    }
+
+    &__sub-detail {
+        @include set-type(primary, mini);
+        font-style: italic;
+        text-transform: uppercase;
+
+        .mj-details--invert & {
+            color: get-color(type, invert);
+        }
+    }
+
+}

@@ -1,0 +1,77 @@
+/* ==========================================================================
+   COLOR DEFINITIONS
+
+   Note: it is preferable to use abstracted colors defined in the color types
+   (content, link, state, etc.) instead of using references to direct colors.
+   To access these colors, use the getter functions under the FUNCTIONS section
+   ========================================================================== */
+
+/* ==========================================================================
+   BASE COLORS
+
+   Note: Color variables denoted with an underscore signify local properties that
+   should not be used outside of the scope of the "colors" file
+   ========================================================================== */
+//Black & White
+$_color-black: #000;
+$_color-white: #fff;
+
+//Grays
+$_color-gray-haze: #f1f2f2;
+$_color-gray-iron: #e0e1e2;
+$_color-gray-alto: #dfdfdf;
+$_color-gray-silver: #afafaf;
+$_color-gray-dove: #666666;
+
+//Reds
+$_color-red: #f65659;
+
+
+/* ==========================================================================
+   COLORS MAP
+
+   Mapping of color variations based on element type that can be accessed
+   via the get-color function
+   ========================================================================== */
+$colors: (
+    type: (
+        default: $_color-gray-dove,
+        invert: $_color-white,
+        heavy: $_color-black,
+        accent: $_color-red
+    ),
+    box: (
+        default: $_color-white,
+        light: $_color-gray-haze,
+        accent: $_color-red
+    ),
+    outline: (
+        default: $_color-red,
+        invert: $_color-white,
+        light: $_color-gray-haze
+    ),
+    link: (
+        default: $_color-red,
+        active: $_color-red
+    ),
+    button: (
+        text: $_color-red,
+        background: $_color-white
+    )
+);
+
+
+/* ==========================================================================
+   FUNCTIONS
+
+   Getters functions for getting color types
+   ========================================================================== */
+
+/**
+ Getter for retrieving a color by type and name
+ @param {String} $color-type Name of color type to retrieve color for
+ @param {String} $color-name Name of color to retrieve
+*/
+@function get-color($color-type, $color-name: 'default') {
+    @return map-deep-get($colors, $color-type, $color-name);
+}

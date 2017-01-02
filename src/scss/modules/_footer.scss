@@ -1,0 +1,13 @@
+.mj-footer {
+    @include padding(large);
+
+    &__logo {
+        display: block;
+        @include margin(none auto);
+        width: px-to-rem(30);
+
+        img {
+            width: 100%;
+        }
+    }
+}

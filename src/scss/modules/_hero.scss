@@ -1,0 +1,70 @@
+.mj-hero {
+    position: relative;
+    background-image: url("/assets/images/std-hero-sm.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-top: 125%;
+
+    @include breakpoint($tablet) {
+        background-image: url("/assets/images/std-hero-md.jpg");
+        padding-top: 130%;
+    }
+
+    @include breakpoint($desktop) {
+        background-image: url("/assets/images/std-hero-lg.jpg");
+        padding-top: 70%;
+    }
+
+    &__logo {
+        position: absolute;
+        top: 0;
+        right: 10%;
+        width: 25%;
+        max-width: px-to-rem(100);
+
+        @include breakpoint($tablet) {
+            left: 10%;
+            right: auto;
+        }
+    }
+
+    &__details {
+        position: absolute;
+        width: 60%;
+        top: 35%;
+        right: 5%;
+        overflow: hidden;
+        @include margin(none auto);
+
+        @include breakpoint($tablet) {
+            width: 42%;
+            top: 28%;
+        }
+
+        @include breakpoint($desktop) {
+            width: 30%;
+            top: 30%;
+            right: 10%;
+        }
+
+    }
+
+    &__title {
+        display: block;
+        @include margin-bottom(medium);
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__date {
+        @include padding(xsmall large);
+        background: get-color(box);
+        @include set-type(primary, peta, 100, accent);
+        text-align: center;
+    }
+}

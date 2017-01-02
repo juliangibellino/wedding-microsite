@@ -1,0 +1,39 @@
+/* ==========================================================================
+   SETTINGS
+   ========================================================================== */
+@include breakpoint-set('to ems', true);
+
+/* ==========================================================================
+   MOBILE FIRST (min-width)
+   ========================================================================== */
+$mobile: 320px;
+$mobile-landscape: 480px;
+$tablet: 600px;
+$ipad: 768px;
+$desktop: 960px;
+$wide-desktop: 1024px;
+
+/* ==========================================================================
+   NON-MOBILE FIRST (max-width)
+   ========================================================================== */
+$max-mobile-landscape: max-width $mobile-landscape;
+$max-tablet: max-width $tablet;
+$max-ipad: max-width $ipad;
+$max-desktop: max-width $desktop;
+$max-wide-desktop: max-width $wide-desktop;
+
+/* ==========================================================================
+   TARGETED RANGES (min-width and max-width)
+   ========================================================================== */
+$target-mobile: (width $mobile $mobile-landscape);
+$target-mobile-landscape: (width $mobile-landscape $tablet);
+$target-tablet: (width $tablet $ipad);
+$target-tablet-desktop: (width $tablet $desktop);
+$target-ipad: (width $ipad $desktop);
+$target-desktop: (width $desktop $wide-desktop);
+
+/* ==========================================================================
+   MEDIA TYPES
+   ========================================================================== */
+$print: print;
+$screen: screen;

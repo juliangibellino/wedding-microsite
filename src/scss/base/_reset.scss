@@ -1,0 +1,63 @@
+/* ==========================================================================
+   RESET
+
+   Global reset styles
+
+   Note: Keep the override very simple and do not apply global styles to semantic
+   elements that do not follow there native styles
+   ========================================================================== */
+@import 'typography';
+
+@include global-reset();
+
+*, *:before, *:after {
+    @include box-sizing(border-box);
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+i,
+em {
+    font-style: italic;
+}
+
+sup,
+sub{
+    font-size: 80%;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+svg {
+    vertical-align: middle;
+    overflow: visible;
+}
+
+body {
+    // Adding font-smoothing
+    // Keeping prefix, mozilla renders clearer @ grayscale
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include set-type(content);
+}
+
+
+// Hide the browser specific number input incrementers
+input[type=number] {
+    -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* Removes leftover margin */
+}
+
+select::-ms-expand {
+    display: none;
+}

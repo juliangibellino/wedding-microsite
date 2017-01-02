@@ -1,17 +1,62 @@
 /* //////////////////////////////////////////////////////////////////////////
    //////////////////////////////////////////////////////////////////////////
 
-   EXAMPLE STYLE MANIFEST
+   COMMON STYLE MANIFEST
 
-   The architecture of the SCSS files is completely un-opinionated and can be
-   implemented as you see fit.
+   GUIDELINES:
+   - Category imports should follow the following order of:
+        - Vendor
+        - Utils
+        - Base
+        - Layout
+        - Modules
 
-   Note: Each 'scss' file that is not prefixed with an underscore will be
-   processed to a 'css' and distributed to the 'dist' directory.
-
-   To update the build process for the css, see 'gulp/tasks/build/compile-sass.js'
+    - All partials should be imported in alphabetical order within a section
+      unless otherwise noted in the category notes.
 
    //////////////////////////////////////////////////////////////////////////
    ////////////////////////////////////////////////////////////////////////// */
 
-@import "partials/example";
+/* ==========================================================================
+   VENDOR
+
+   TYPES: third-party libraries, mixin and functions
+   ========================================================================== */
+@import '../../node_modules/compass-mixins/lib/compass';
+@import '../../node_modules/compass-mixins/lib/animate';
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
+
+/* ==========================================================================
+   Utils
+
+   TYPES: mixin and functions
+   ========================================================================== */
+@import 'utils/directional-properties';
+@import 'utils/map-fetch';
+@import 'utils/px-to';
+@import 'utils/strip-units';
+
+/* ==========================================================================
+   BASE
+
+   TYPES: normalize, reset, typography, grid, etc
+   ========================================================================== */
+@import 'base/breakpoints';
+@import 'base/colors';
+@import 'base/fonts';
+@import 'base/reset';
+@import 'base/spacing';
+@import 'base/typography';
+
+/* ==========================================================================
+   MODULES
+
+   TYPES: stand-alone components
+   ========================================================================== */
+@import 'modules/accommodations';
+@import 'modules/content';
+@import 'modules/details';
+@import 'modules/footer';
+@import 'modules/headings';
+@import 'modules/hero';
+@import 'modules/section';
