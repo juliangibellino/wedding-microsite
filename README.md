@@ -1,23 +1,4 @@
-# Gulp, Sass and Browserify Boilerplate
-
-This project includes a foundational architecture for setting up a project using Gulp, Sass and Browserify. It does
-not impose any frameworks or libraries, and provides a agnostic approach for structuring your Sass and JS modules 
-for processing and compilation.
-
-## Getting Started
-
-1. Download or clone the latest repo `git clone https://github.com/juliangibellino/gulp-sass-browserify-boilerplate.git`
-2. [Install dependencies](#install-dependencies)
-3. [Build project](#builds)
-4. [Source Code](#source-files)
-
-## Install Dependencies
-
-To run the project environment, first make sure the following dependencies are installed:
-
-1. [Node.js](https://nodejs.org/) for npm package dependencies and build automation
-2. [Gulp](http://gulpjs.com/) task runner. (May need to be installed globally w/ `npm install gulp -g`)
-3. Install dev dependencies by in project root by running `npm install` 
+# Wedding microsite
 
 ## Builds
 
