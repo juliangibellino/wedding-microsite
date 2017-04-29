@@ -32,28 +32,46 @@
 
     &__details {
         position: absolute;
-        width: 60%;
+        width: 70%;
         top: 35%;
-        right: 5%;
+        right: 50%;
+        @include transform(translateX(50%));
         overflow: hidden;
+        text-align: center;
         @include margin(none auto);
 
         @include breakpoint($tablet) {
-            width: 42%;
-            top: 28%;
+            width: 45%;
+            top: 40%;
+            right: 5%;
+            @include transform(none);
+
         }
 
         @include breakpoint($desktop) {
-            width: 30%;
-            top: 30%;
-            right: 10%;
+            width: 40%;
+            top: 20%;
+            right: 5%;
         }
 
     }
 
     &__title {
         display: block;
-        @include margin-bottom(medium);
+        @include set-type(secondary, tera, normal, invert);
+        font-size: px-to-rem(70);
+        line-height: 1;
+        margin-bottom: px-to-rem(40);
+
+
+        @include breakpoint($tablet) {
+            font-size: px-to-rem(100);
+            margin-bottom: px-to-rem(70);
+        }
+
+        @include breakpoint($desktop) {
+            font-size: px-to-rem(118);
+        }
 
         img {
             display: block;
@@ -61,10 +79,22 @@
         }
     }
 
+    &__eyebrow {
+        @include set-type(primary, micro, bold, invert);
+        text-transform: uppercase;
+
+        @include breakpoint($tablet) {
+            @include set-type-size(kilo)
+        }
+    }
+
     &__date {
         @include padding(xsmall large);
-        background: get-color(box);
-        @include set-type(primary, peta, 100, accent);
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid get-color(outline, invert);
+        border-left: none;
+        border-right: none;
+        @include set-type(primary, mega, bold, invert);
         text-align: center;
     }
 }

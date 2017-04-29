@@ -1,13 +1,15 @@
 .mj-footer {
     @include padding(large);
+    background: get-color(box, light);
 
     &__logo {
         display: block;
         @include margin(none auto);
-        width: px-to-rem(30);
+        max-width: px-to-rem(80);
 
         img {
             width: 100%;
         }
+
     }
 }

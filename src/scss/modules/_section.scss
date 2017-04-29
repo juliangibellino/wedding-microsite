@@ -6,11 +6,16 @@
 .mj-section {
     width: 100%;
     max-width: 100%;
-    @include padding(none xlarge);
+    @include padding(none small);
+
+    @include breakpoint($tablet) {
+        @include padding(none xlarge);
+
+    }
 
     @include breakpoint($desktop) {
-        padding-left: calc((50% + 40px) - 400px);
-        padding-right: calc((50% + 40px) - 400px);
+        padding-left: calc((50% + 20px) - 600px);
+        padding-right: calc((50% + 20px) - 600px);
     }
 
     &--padded {

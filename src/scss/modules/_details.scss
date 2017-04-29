@@ -3,7 +3,7 @@
     @include margin(none auto xxlarge);
 
     @include breakpoint($tablet) {
-        width: 70%;
+        width: 60%;
     }
 
     &:last-child {
@@ -16,12 +16,11 @@
     }
 
     &__item {
-        width: 90%;
         @include margin(none auto large);
         text-align: center;
 
         @include breakpoint($tablet) {
-            width: 70%;
+            width: 80%;
             @include margin-bottom(xlarge);
         }
 
@@ -44,6 +43,7 @@
     }
 
     &__detail {
+        @include margin-bottom(xlarge);
         @include set-type(primary, micro);
         text-transform: uppercase;
 
@@ -54,7 +54,7 @@
 
     &__sub-detail {
         @include set-type(primary, mini);
-        font-style: italic;
+        line-height: 1.5;
         text-transform: uppercase;
 
         .mj-details--invert & {

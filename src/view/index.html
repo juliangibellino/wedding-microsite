@@ -11,24 +11,46 @@
 </head>
 <body>
 
+    <nav class="mj-nav">
+        <ul class="mj-nav__links">
+            <li class="mj-nav__link">
+                <a href="#ceremony-reception">ceremony</a>
+            </li>
+            <li class="mj-nav__link">
+                <a href="#ceremony-reception">reception</a>
+            </li>
+        </ul>
+        <div class="mj-nav__logo">
+            <a href="/">
+                <img src="/assets/images/m-j-logo.png" />
+            </a>
+        </div>
+        <ul class="mj-nav__links">
+            <li class="mj-nav__link">
+                <a href="#accommodations">accommodations</a>
+            </li>
+            <li class="mj-nav__link">
+                <a href="#registry">registry</a>
+            </li>
+        </ul>
+    </nav>
+
     <section class="mj-hero">
-        <nav>
-            <div class="mj-hero__logo">
-                <img src="/assets/images/std-logo.png" alt="Marci + Julian">
-            </div>
-        </nav>
         <div class="mj-hero__details">
-            <div class="mj-hero__title">
-                <img src="/assets/images/std-hero-title.png" alt="">
+            <div class="mj-hero__eyebrow">
+                come celebrate our
             </div>
-            <div class="mj-hero__date">7/7/17</div>
+            <div class="mj-hero__title">
+                wedding
+            </div>
+            <div class="mj-hero__date">7 | 7 | 17</div>
 
         </div>
 
     </section>
-    <section class="mj-section mj-section--padded">
+    <section class="mj-section mj-section--padded" id="ceremony-reception">
         <div class="mj-heading">
-            <h2 class="mj-heading__title">Come Celebrate our Wedding</h2>
+            <h2 class="mj-heading__title">ceremony &amp;reception</h2>
             <p class="mj-heading__subtitle">Please join us July 7<sup>th</sup>, 2017 for a casual ceremony, followed by dinner and drinks at the anthony wayne house in Paoli Pennsylvania.</p>
         </div>
         <div class="mj-details mj-details--border">
@@ -50,9 +72,9 @@
             </div>
         </div>
     </section>
-    <section class="mj-section mj-section--padded mj-accom">
+    <section class="mj-section mj-section--padded mj-accom" id="accommodations">
         <div class="mj-heading mj-heading--invert">
-            <h2 class="mj-heading__title">Accommodations</h2>
+            <h2 class="mj-heading__title">accommodations</h2>
             <p class="mj-heading__subtitle">Blocks of rooms have been reserved at the Desmond Hotel Malvern. Several room types will be available. to receive the wedding group discount Mention the DeVincenzo-Gibellino wedding.</p>
         </div>
         <div class="mj-details mj-details--invert">
@@ -63,16 +85,22 @@
                     Malvern, PA 19355<br />
                     <bold>(610) 296-9800</bold>
                 </p>
-                <p class="mj-details__sub-detail">(Shuttles will be provided to and from the ceremony)</p>
+                <p class="mj-details__sub-detail">
+                    Shuttles will be provided to and from the ceremony. The shuttle to the ceremony will depart at 4:45 PM, with a return shuttle at the close of the reception.
+                </p>
             </div>
         </div>
-        <!--<div class="mj-accom__cta">
-            <a class="mj-accom__button" href="http://www.desmondgv.com/" target="_blank">Book Online</a>
-        </div>-->
+    </section>
+    <section class="mj-section mj-section--padded" id="registry">
+        <div class="mj-heading">
+            <h2 class="mj-heading__title">registry</h2>
+            <p class="mj-heading__subtitle">The most important gift to us is having you share in our special day. If we are blessed with a gift from you, we have a few options from our registry at ZOLA :)</p>
+        </div>
+        <a class="zola-registry-embed" href="https://www.zola.com/registry/marciandjulian" data-registry-key="marciandjulian">Our Zola Wedding Registry</a><script>!function(e,t,n){var s,a=e.getElementsByTagName(t)[0];e.getElementById(n)||(s=e.createElement(t),s.id=n,s.async=!0,s.src="https://widget.zola.com/js/widget.js",a.parentNode.insertBefore(s,a))}(document,"script","zola-wjs");</script>
     </section>
     <footer class="mj-footer">
         <div class="mj-footer__logo">
-            <img src="/assets/images/std-footer-logo.png" alt="Marci + Julian">
+            <img src="/assets/images/m-j-logo.png" alt="Marci + Julian">
         </div>
     </footer>
     <script src="js/main.js"></script>

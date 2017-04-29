@@ -7,18 +7,18 @@
 
     &__title {
         display: block;
-        @include margin(none auto medium);
-        @include padding(none 15%);
+        @include margin(none auto large);
+        @include padding(none 5%);
         position: relative;
-        @include set-type(secondary, tera);
-        letter-spacing: 0.15rem;
+        @include set-type(secondary, peta);
+        //letter-spacing: 0.15rem;
         color: get-color(type, accent);
         text-align: center;
 
         &:before,
         &:after{
             position: absolute;
-            top: 40%;
+            top: 60%;
             content: '';
             display: block;
             width: 5%;
@@ -55,7 +55,7 @@
         text-transform: uppercase;
 
         @include breakpoint($tablet) {
-            @include padding(none 10%);
+            @include padding(none 20%);
         }
 
         .mj-heading--invert & {

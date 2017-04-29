@@ -1,4 +1,13 @@
 @font-face {
+    font-family: 'hijrnotes';
+    src: url('/assets/fonts/hijrnotes-webfont.woff2') format('woff2'),
+    url('/assets/fonts/hijrnotes-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
     font-family: 'scriblle_script';
     src: url('/assets/fonts/scriblle_script-webfont.woff2') format('woff2'),
     url('/assets/fonts/scriblle_script-webfont.woff') format('woff');
